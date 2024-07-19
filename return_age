@@ -71,5 +71,22 @@ def main():
 
     print(f"Thank you for your input, {name}. Your age is currently {age}.")
 
+    print(f" Here's a fun fact for you {name}. If you took your age {age} and doubled it, then doubled it again and kept doing that, it would only take this many times until you would be 5,000,000,000,000 years old. ")
+
+    selection = input(" Would you like to see?   Y/N ")
+    if selection == 'Y':
+        c = age
+        print(c)
+        c = c + c
+        while True:
+            if c <= 5000000000000:
+                c = c + c
+                print(c)
+            else:
+                break
+                print(c)
+    elif selection == 'N':
+        print(" Fair enough, I don't know why you would want to see that either. ")
+
 if __name__ == "__main__":
     main()
