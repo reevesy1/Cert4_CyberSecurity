@@ -1,0 +1,26 @@
+a = int(input(" choose a number "))
+
+def isPrime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+if isPrime(a) == True:
+    print(" It's a prime ")
+else:
+    print(" Its not a prime ")
+
+
+    find = input(" Do you want to see which numbers are prime up til your number? Y/N ")
+    if find == "Y":
+        c = isPrime(a)
+        while True:
+            if isPrime(a) == False:
+                c = c + 1
+                print(c)
+            else:
+                break
+                print(c)
