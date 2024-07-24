@@ -1,0 +1,33 @@
+choice1 = input(" Do you like movies or music? ")
+
+if choice1 == "movies":
+    print( "movie lover")
+
+    choice1_2 = input(" comedy or action? ")
+
+    if choice1_2 == "comedy":
+        print(" comedy lover ")
+
+    elif choice1_2 == "action":
+        print(" action lover ")
+
+    else:
+        print(" invalid option ")
+
+elif choice1 == "music":
+    print(" music lover ")
+    
+    choice1_3 = input(" hip-hop or R 'n' B ")
+
+    if choice1_3 == "hip-hop":
+        print(" hip-hop lover ")
+
+    elif choice1_3 == "R 'n' B":
+        print(" R 'n' B lover ")
+
+    else:
+        print(" invalid option ")
+            return
+
+else:
+    print(" invalid option ")
