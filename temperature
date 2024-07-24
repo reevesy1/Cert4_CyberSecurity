@@ -1,0 +1,5 @@
+userInput1 = int(input(" Choose Temp in Farenheit "))
+userInput2 = int(input(" Choose Temp in Celcius "))
+
+print(((userInput1 - 32) * 5 / 9), "C")
+print(((userInput2 * 9 / 5) + 32), "F")
