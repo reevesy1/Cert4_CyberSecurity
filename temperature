@@ -1,5 +1,22 @@
-userInput1 = int(input(" Choose Temp in Farenheit "))
-userInput2 = int(input(" Choose Temp in Celcius "))
+#userInput1 = int(input(" Choose Temp in Farenheit "))
+#userInput2 = int(input(" Choose Temp in Celcius "))
 
-print(((userInput1 - 32) * 5 / 9), "C")
-print(((userInput2 * 9 / 5) + 32), "F")
+#print(((userInput1 - 32) * 5 / 9), "℃")
+#print(((userInput2 * 9 / 5) + 32), "℉")
+
+
+Temp = int(input(" Whats the temperature "))
+userInput = input(" Is that farenheit or celcius? F / C ")
+
+def convertF2C():
+    print(((Temp - 32) * 5 / 9), "C")
+
+def convertC2F():
+    print(((Temp * 9 / 5) + 32), "F")
+
+if userInput == "F":
+    convertF2C()
+elif userInput == "C":
+    convertC2F()
+else:
+    print(" Invalid response ")
