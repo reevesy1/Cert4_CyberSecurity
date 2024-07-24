@@ -27,7 +27,6 @@ elif choice1 == "music":
 
     else:
         print(" invalid option ")
-            return
 
 else:
     print(" invalid option ")
