@@ -1,0 +1,43 @@
+# variables
+balance = 1000  # Example starting balance
+account_selected = None
+transaction_amount = 0
+receipt_requested = False
+
+
+# enter PIN
+pin = int(input("Please enter your PIN: "))
+print("PIN entered successfully.")
+
+
+# select an account
+accounts = ["Account 1", "Account 2"]
+account_index = int(input("Select an account (0 for Account 1, 1 for Account 2): "))
+account_selected = accounts[account_index]
+
+# show available options
+options = ["View Balance", "Withdraw Money"]
+selected_option_index = int(input("Choose an option:\n0 for View Balance\n1 for Withdraw Money\nEnter choice: "))
+
+
+if selected_option_index == 0:
+    print(f"Balance for {account_selected}: ${balance}")
+elif selected_option_index == 1:
+    transaction_amount = float(input("How much do you want to withdraw? "))
+    if transaction_amount <= balance:
+        balance -= transaction_amount
+        print(f"Withdrawal successful. New balance: ${balance}")
+        receipt_requested = True
+    else:
+        print("Insufficient funds.")
+else:
+    print("Invalid option chosen.")
+
+# Receipt option
+if receipt_requested:
+    print("Do you want a receipt? (yes/no)")
+    receipt_choice = input()
+    if receipt_choice.lower() == "yes":
+        print("Receipt generated.")
+    else:
+        print("No receipt generated.")
