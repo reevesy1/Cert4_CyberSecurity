@@ -3,7 +3,8 @@ balance = 1000  # Example starting balance
 account_selected = None
 transaction_amount = 0
 receipt_requested = False
-
+pin = 1234
+attempts = 0
 
 while True:
     # enter PIN
