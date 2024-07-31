@@ -6,22 +6,29 @@ receipt_requested = False
 pin = 1234
 attempts = 0
 
+
 while True:
     # enter PIN
-    entered_pin = int(input("Please enter your PIN: "))
+    while True:
+        try:
+            entered_pin = int(input("Please enter your PIN: "))
+            break  # If input is number, break out loop 1
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+            
+    attempts += 1  # counter
     
     if entered_pin == pin:
         print("PIN entered successfully.")
-        break  # Exit loop if PIN is correct
-    else:
-        attempts += 1  # counter
-        if attempts >= 4:  # Lock card after 4 fails
-            print("Card locked due to multiple incorrect PIN entries. Please contact customer service.")
-            exit(0)  # Exit the program
-        elif attempts < 4:  # Deny 3 fails
-            print("Incorrect PIN. Access denied.")
-        
-        continue
+        break  # Exit loop 2 if PIN is correct
+    elif attempts >= 4:  # Lock card after 4 fails
+        print("Card locked due to multiple incorrect PIN entries. Please contact customer service.")
+        exit(0)  # Exit
+    else:  # Deny after 3 fails
+        print("Incorrect PIN. Access denied.")
+        continue  # Skip the rest and ask for PIN again
+
+
 
 # select an account
 accounts = ["Account 1", "Account 2"]
