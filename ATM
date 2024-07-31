@@ -5,10 +5,22 @@ transaction_amount = 0
 receipt_requested = False
 
 
-# enter PIN
-pin = int(input("Please enter your PIN: "))
-print("PIN entered successfully.")
-
+while True:
+    # enter PIN
+    entered_pin = int(input("Please enter your PIN: "))
+    
+    if entered_pin == pin:
+        print("PIN entered successfully.")
+        break  # Exit loop if PIN is correct
+    else:
+        attempts += 1  # counter
+        if attempts >= 4:  # Lock card after 4 fails
+            print("Card locked due to multiple incorrect PIN entries. Please contact customer service.")
+            exit(0)  # Exit the program
+        elif attempts < 4:  # Deny 3 fails
+            print("Incorrect PIN. Access denied.")
+        
+        continue
 
 # select an account
 accounts = ["Account 1", "Account 2"]
