@@ -13,20 +13,18 @@ def count_char_frequency(input_string):
 
     return frequency_dict
 
-# Read the content of the file
-file_path = input("\n If input string is the contents of a file,\n What is the files path? \n Otherwise input string here. \n ")
+# Get input from user
+input_string = input("\n If input string is the contents of a file,\n What is the files path? \n Otherwise input string here. \n ")
 try:
-    with open(file_path, 'r') as file:
+    with open(input_string, 'r') as file:
         input_string = file.read()
 except FileNotFoundError:
-    print(f"Error: The file at {file_path} was not found.")
+    print(f"Error: The file at {input_string} was not found.")
     print(" Assuming input is the desired input_string ")
-    input_string = "{file_path}"
 
-if input_string:
     # Get the frequency of each character
-    frequency = count_char_frequency(input_string)
+frequency = count_char_frequency(input_string)
 
     # Print the frequency of each character
-    for char, count in frequency.items():
-        print(f"Character: '{char}', Frequency: {count}")
+for char, count in frequency.items():
+    print(f"Character: '{char}', Frequency: {count}")
